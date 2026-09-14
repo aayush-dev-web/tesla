@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | Tesla</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Hidden checkbox that drives the region panel open/close (checkbox hack, no JS) -->
+<input type="checkbox" id="regionToggle" class="hidden-toggle">
+
+<div class="page">
+
+  <!-- Header -->
+  <header class="topbar">
+    <a href="home.html" class="logo-link" aria-label="Tesla Home">
+      <img src="tesla.png" alt="Tesla" class="logo">
+    </a>
+
+    <label for="regionToggle" class="region-btn">
+      <img src="globe.png" alt="" class="globe-icon">
+      <span>US</span>
+    </label>
+  </header>
+
+  <!-- Dark overlay behind the panel; also closes it when clicked -->
+  <label for="regionToggle" class="overlay"></label>
+
+  <!-- Region / language side panel -->
+  <aside class="region-panel">
+    <label for="regionToggle" class="panel-close" aria-label="Close">&times;</label>
+
+    <div class="panel-scroll">
+
+      <section class="region-group">
+        <h3>North America</h3>
+
+        <label class="region-option">
+          <input type="radio" name="region" checked>
+          <span class="region-name">United States</span>
+          <span class="region-lang">English</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Canada</span>
+          <span class="region-lang">English&emsp;Fran&ccedil;ais</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">M&eacute;xico</span>
+          <span class="region-lang">Espa&ntilde;ol</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Puerto Rico</span>
+          <span class="region-lang">English&emsp;Espa&ntilde;ol</span>
+        </label>
+      </section>
+
+      <section class="region-group">
+        <h3>South America</h3>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Chile</span>
+          <span class="region-lang">Espa&ntilde;ol</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Colombia</span>
+          <span class="region-lang">Espa&ntilde;ol</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Uruguay</span>
+          <span class="region-lang">Espa&ntilde;ol</span>
+        </label>
+      </section>
+
+      <section class="region-group">
+        <h3>Europe</h3>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">United Kingdom</span>
+          <span class="region-lang">English</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">France</span>
+          <span class="region-lang">Fran&ccedil;ais</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Germany</span>
+          <span class="region-lang">Deutsch</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Spain</span>
+          <span class="region-lang">Espa&ntilde;ol</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Italy</span>
+          <span class="region-lang">Italiano</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Netherlands</span>
+          <span class="region-lang">Nederlands</span>
+        </label>
+      </section>
+
+      <section class="region-group">
+        <h3>Asia Pacific</h3>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">China</span>
+          <span class="region-lang">&#20013;&#25991;</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Japan</span>
+          <span class="region-lang">&#26085;&#26412;&#35486;</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">Australia</span>
+          <span class="region-lang">English</span>
+        </label>
+
+        <label class="region-option">
+          <input type="radio" name="region">
+          <span class="region-name">South Korea</span>
+          <span class="region-lang">&#54620;&#44397;&#50612;</span>
+        </label>
+      </section>
+
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+
+    <!-- STEP 1 -->
+    <section class="step" id="step1">
+      <p class="step-label">Step 1 of 3</p>
+      <h1 class="title">Create Account</h1>
+
+      <div class="field">
+        <label for="regionSelect">Region</label>
+        <select id="regionSelect">
+          <option>United States</option>
+          <option>Canada</option>
+          <option>M&eacute;xico</option>
+          <option>Puerto Rico</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="languageSelect">Language</label>
+        <select id="languageSelect">
+          <option>English</option>
+          <option>Fran&ccedil;ais</option>
+          <option>Espa&ntilde;ol</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" autocomplete="given-name">
+      </div>
+
+      <div class="field">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" autocomplete="family-name">
+      </div>
+
+      <p class="fine-print">
+        By clicking 'Next', I understand and agree to Tesla's
+        <a href="#">Privacy Notice</a> and <a href="#">Terms of Use</a>
+        for creating a Tesla Account and I authorize Tesla to contact me
+        for account management purposes via the contact information I
+        provide. I understand calls or texts may use automatic or
+        computer-assisted dialing or pre-recorded messages. Normal message
+        and data rates apply.
+      </p>
+
+      <a href="#step2" class="btn-next">Next</a>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step" id="step2">
+      <p class="step-label">Step 2 of 3</p>
+      <h1 class="title">Create Account</h1>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="new-password">
+
+        <ul class="pw-rules">
+          <li><span class="mark">&times;</span> At least 8 characters</li>
+          <li><span class="mark">&times;</span> At least one letter</li>
+          <li><span class="mark">&times;</span> At least one number</li>
+          <li><span class="mark">&times;</span> At least one special character</li>
+        </ul>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" autocomplete="new-password">
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox" checked>
+        <span class="checkmark"></span>
+        Get Tesla Updates [Optional]
+      </label>
+
+      <p class="fine-print">
+        Learn about <a href="#">Tesla Updates</a>
+      </p>
+
+      <p class="fine-print">
+        By clicking 'Create Account', I agree that I want to be contacted
+        by Tesla to receive Tesla Updates via the contact information I
+        provide. I can opt out at any time in the Tesla app or by
+        <a href="#">unsubscribing</a>.
+      </p>
+
+      <label class="captcha-box">
+        <input type="checkbox">
+        <span class="checkmark"></span>
+        I am human
+        <span class="hcaptcha-badge">
+          hCaptcha
+          <small>Privacy &middot; Terms</small>
+        </span>
+      </label>
+
+      <a href="#step3" class="btn-next">Next</a>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step" id="step3">
+      <p class="step-label">Step 3 of 3</p>
+      <h1 class="title">Verify Your Email</h1>
+      <p class="subtitle">Enter the code sent to aayushfourth@gmail.com</p>
+
+      <div class="otp-row">
+        <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-box" inputmode="numeric">
+      </div>
+
+      <button type="button" class="btn-secondary">Resend Code</button>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>Tesla &copy; 2026</span>
+    <a href="#">Privacy &amp; Legal</a>
+    <a href="#">Contact</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
