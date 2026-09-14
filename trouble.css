@@ -1,0 +1,595 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #171a20;
+  background: #fff;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ========================================
+   NAVIGATION BAR
+======================================== */
+
+.navbar {
+  height: 64px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top: 3px solid #68408a;
+}
+
+/* ========================================
+   TESLA LOGO
+======================================== */
+
+.logo {
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 121px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ========================================
+   MAIN NAVIGATION
+======================================== */
+
+.nav-links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: static;
+}
+
+.nav-main-link {
+  display: flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #171a20;
+  white-space: nowrap;
+}
+
+.nav-main-link:hover {
+  background-color: #f0f0f0;
+}
+
+/* ========================================
+   MEGA MENU
+======================================== */
+
+.mega-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #eeeeee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+.nav-item:hover .mega-menu {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================================
+   VEHICLES / ENERGY / CHARGING MENU
+======================================== */
+
+.vehicles-menu,
+.energy-menu,
+.charging-menu {
+  min-height: 510px;
+  display: flex;
+  padding: 58px 0 55px;
+}
+
+.mega-left {
+  flex: 1;
+  padding-left: 135px;
+  padding-right: 45px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  column-gap: 20px;
+  row-gap: 35px;
+  max-width: 900px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #171a20;
+}
+
+.product img {
+  width: 185px;
+  height: 105px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.product h3 {
+  font-size: 17px;
+  line-height: 1.2;
+  margin-bottom: 9px;
+  font-weight: 600;
+}
+
+.product div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product span {
+  font-size: 14px;
+  color: #5c5e62;
+  text-decoration: underline;
+}
+
+.product:hover h3 {
+  text-decoration: underline;
+}
+
+.product:hover span {
+  color: #171a20;
+}
+
+/* ========================================
+   ENERGY
+======================================== */
+
+.energy-menu {
+  min-height: 380px;
+}
+
+.energy-grid {
+  grid-template-columns: repeat(3, 210px);
+  column-gap: 30px;
+}
+
+/* ========================================
+   CHARGING
+======================================== */
+
+.charging-menu {
+  min-height: 445px;
+}
+
+.charging-grid {
+  grid-template-columns: repeat(4, 190px);
+  column-gap: 25px;
+  row-gap: 28px;
+}
+
+/* ========================================
+   RIGHT MENU LINKS
+======================================== */
+
+.mega-right {
+  width: 465px;
+  border-left: 1px solid #d6d6d6;
+  padding: 5px 55px 5px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mega-right a {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 7px 0;
+  color: #30343a;
+}
+
+.mega-right a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   DISCOVER MENU
+======================================== */
+
+.discover-menu {
+  min-height: 480px;
+  padding: 68px 0;
+}
+
+.discover-columns {
+  width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr;
+  column-gap: 70px;
+}
+
+.discover-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.discover-heading {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 23px;
+}
+
+.discover-column a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #30343a;
+  margin-bottom: 17px;
+}
+
+.discover-column a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   SHOP MENU
+======================================== */
+
+.shop-menu {
+  min-height: 335px;
+  padding: 62px 0;
+}
+
+.shop-products {
+  width: 850px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.shop-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #171a20;
+}
+
+.shop-product img {
+  width: 170px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.shop-product h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.shop-product:hover h3 {
+  text-decoration: underline;
+}
+
+/* ========================================
+   RIGHT SIDE ICONS
+======================================== */
+
+.nav-icons {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-icon:hover {
+  background-color: #f0f0f0;
+}
+
+/* ========================================
+   TROUBLESHOOT PAGE
+======================================== */
+
+.trouble-page {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 64px 96px 70px;
+  display: grid;
+  grid-template-columns: 360px minmax(0, 800px);
+  column-gap: 88px;
+}
+
+.article-nav {
+  position: sticky;
+  top: 104px;
+  align-self: start;
+  padding-top: 40px;
+}
+
+.article-nav h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 19px;
+}
+
+.article-nav a {
+  display: block;
+  width: fit-content;
+  margin-bottom: 20px;
+  color: #6b6e73;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.article-nav a:hover {
+  color: #171a20;
+  text-decoration: underline;
+}
+
+.article-header {
+  padding-top: 27px;
+  margin-bottom: 81px;
+}
+
+.article-header h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+
+.article-header p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #30343a;
+}
+
+.trouble-section {
+  margin-bottom: 64px;
+  scroll-margin-top: 95px;
+}
+
+.trouble-section h2 {
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.trouble-section p {
+  max-width: 700px;
+  font-size: 15px;
+  line-height: 1.48;
+  color: #30343a;
+}
+
+.inline-link {
+  color: #30343a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.action-buttons a {
+  min-width: 204px;
+  height: 41px;
+  padding: 0 22px;
+  border: 2px solid #22262b;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #171a20;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color .15s ease;
+}
+
+.action-buttons a:hover {
+  background-color: #f2f2f2;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.site-footer {
+  min-height: 70px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #5c5e62;
+  font-size: 12px;
+}
+
+.site-footer a {
+  color: #5c5e62;
+}
+
+.site-footer a:hover {
+  color: #171a20;
+  text-decoration: underline;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .navbar {
+    padding: 0 25px;
+  }
+
+  .mega-left {
+    padding-left: 30px;
+  }
+
+  .mega-right {
+    width: 300px;
+    padding-left: 30px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .shop-products {
+    width: 90%;
+  }
+
+  .discover-columns {
+    width: 85%;
+  }
+
+  .trouble-page {
+    grid-template-columns: 280px minmax(0, 1fr);
+    column-gap: 55px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .navbar {
+    height: 56px;
+    padding: 0 20px;
+  }
+
+  .logo {
+    width: auto;
+  }
+
+  .logo img {
+    width: 105px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-icons {
+    width: auto;
+  }
+
+  .mega-menu {
+    display: none;
+  }
+
+  .trouble-page {
+    display: block;
+    padding: 86px 24px 45px;
+  }
+
+  .article-nav {
+    position: static;
+    padding-top: 0;
+    margin-bottom: 48px;
+  }
+
+  .article-nav a {
+    margin-bottom: 13px;
+  }
+
+  .article-header {
+    padding-top: 0;
+    margin-bottom: 58px;
+  }
+
+  .article-header h1 {
+    font-size: 29px;
+  }
+
+  .trouble-section h2 {
+    font-size: 24px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons a {
+    width: 100%;
+  }
+
+  .site-footer {
+    padding: 25px 20px;
+    line-height: 1.5;
+  }
+}
