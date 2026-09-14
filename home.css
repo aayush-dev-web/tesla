@@ -496,17 +496,128 @@ sup {
     justify-content: center;
 
     border-radius: 50%;
+}
 
-    font-size: 19px;
+.nav-icon img {
 
-    font-weight: 500;
+    width: 19px;
+    height: 19px;
 
-    color: #171a20;
+    object-fit: contain;
 }
 
 .nav-icon:hover {
 
     background-color: #f0f0f0;
+}
+
+
+/* ========================================
+   LANGUAGE MENU
+======================================== */
+
+.lang-item {
+
+    position: static;
+}
+
+.language-menu {
+
+    min-height: 480px;
+}
+
+.language-columns {
+
+    display: flex;
+
+    gap: 100px;
+
+    padding: 45px 8% 60px;
+}
+
+.language-col {
+
+    flex: 1;
+}
+
+.europe-col {
+
+    flex: 2.6;
+}
+
+.region-heading {
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.region-heading-spaced {
+
+    margin-top: 35px;
+}
+
+.country {
+
+    margin-bottom: 18px;
+}
+
+.country.selected {
+
+    background-color: #f0f0f0;
+
+    padding: 10px 14px;
+
+    margin: -10px -14px 18px;
+
+    border-radius: 6px;
+
+    display: inline-block;
+}
+
+.country h4 {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+.langs {
+
+    display: flex;
+
+    gap: 14px;
+}
+
+.langs span {
+
+    font-size: 13px;
+
+    color: #666;
+
+    cursor: pointer;
+}
+
+.langs span:hover {
+
+    color: #171a20;
+
+    text-decoration: underline;
+}
+
+.europe-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    column-gap: 40px;
+
+    row-gap: 18px;
 }
 
 
@@ -525,7 +636,7 @@ sup {
 }
 
 
-/* Hero Background */
+/* Hero Background - auto crossfade slideshow (pure CSS) */
 
 .hero-bg {
     position: absolute;
@@ -539,6 +650,30 @@ sup {
     object-fit: cover;
 
     z-index: 1;
+
+    opacity: 0;
+
+    animation: heroFade 12s infinite;
+}
+
+.slide-1 {
+    animation-delay: 0s;
+}
+
+.slide-2 {
+    animation-delay: 4s;
+}
+
+.slide-3 {
+    animation-delay: 8s;
+}
+
+@keyframes heroFade {
+    0%   { opacity: 0; }
+    3%   { opacity: 1; }
+    30%  { opacity: 1; }
+    33%  { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 
@@ -734,59 +869,32 @@ sup {
 }
 
 
-/* ========================================
-   MODEL SECTION
-======================================== */
+/* Hero dots pulse in sync with their matching slide */
 
-.model-section {
-    height: 720px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    text-align: center;
+.hero .dot-1,
+.hero .dot-2,
+.hero .dot-3 {
+    animation: dotActive 12s infinite;
 }
 
-
-/* Background Image */
-
-.background-image {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+.hero .dot-1 {
+    animation-delay: 0s;
 }
 
-
-/* Model Text */
-
-.model-content {
-    position: absolute;
-
-    top: 60px;
-
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: white;
-
-    text-shadow: 0 1px 5px #333;
+.hero .dot-2 {
+    animation-delay: 4s;
 }
 
-.model-content h1 {
-    font-size: 50px;
-
-    margin-bottom: 10px;
+.hero .dot-3 {
+    animation-delay: 8s;
 }
 
-.model-content p {
-    font-size: 18px;
-
-    margin-bottom: 25px;
+@keyframes dotActive {
+    0%   { background-color: white; }
+    3%   { background-color: #555; }
+    30%  { background-color: #555; }
+    33%  { background-color: white; }
+    100% { background-color: white; }
 }
 
 
@@ -1088,7 +1196,7 @@ sup {
 
     height: 560px;
 
-    object-fit: cover;
+    border: 0;
 
     display: block;
 }
@@ -1142,11 +1250,28 @@ sup {
     gap: 55px;
 }
 
+.stat-number {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 4px;
+}
+
 .charging-stats .stat h3 {
 
     font-size: 32px;
+}
 
-    margin-bottom: 4px;
+.stat-number img {
+
+    width: 22px;
+    height: 22px;
+
+    object-fit: contain;
 }
 
 .charging-stats .stat p {
@@ -1398,6 +1523,14 @@ footer a:hover {
     .discover-columns {
         width: 85%;
     }
+
+    .language-columns {
+        gap: 40px;
+    }
+
+    .europe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 900px) {
@@ -1485,13 +1618,8 @@ footer a:hover {
         height: 600px;
     }
 
-    .hero-content h1,
-    .model-content h1 {
+    .hero-content h1 {
         font-size: 40px;
-    }
-
-    .model-section {
-        height: 600px;
     }
 
     .fsd-content h1 {
